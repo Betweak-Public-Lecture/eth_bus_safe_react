@@ -8,6 +8,12 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import Register from './pages/Register';
 
+// Car Crud Page
+import CarList from './pages/Car/CarList';
+import CarDetail from './pages/Car/CarDetail';
+import CarEdit from './pages/Car/CarDetail';
+import CarAdd from './pages/Car/CarAdd';
+
 function App() {
   const [isLogined, setIsLogined] = React.useState(false);
 
@@ -26,10 +32,6 @@ function App() {
       )
     }
   }, [])
-
-
-
-
 
   return (
     <Router>

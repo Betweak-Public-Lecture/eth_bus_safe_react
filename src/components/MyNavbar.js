@@ -23,6 +23,11 @@ export default function MyNavbar({authInfo, onLogout}) {
         </Nav>
 
         <Nav inline>
+          <Nav.Link>
+            {authInfo.linkcode === 1 ? "정비사" : null}
+            {authInfo.linkcode === 0 ? "master": null}
+          </Nav.Link>
+
           {authInfo.linkcode !== -1 ? <Nav.Link onClick={()=>{
             onLogout();
             localStorage.removeItem('authInfo');

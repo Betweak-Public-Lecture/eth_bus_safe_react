@@ -28,7 +28,7 @@ export default function Login({history, setAuthInfo}) {
         // localStorage.setItem('post_id', userForm.post_id);
         
         setAuthInfo(data.result) // App.js의 State로 저장.
-        history.push('/home');
+        history.push('/');
       }
     })
   }

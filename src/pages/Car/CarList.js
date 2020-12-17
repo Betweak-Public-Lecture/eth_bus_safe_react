@@ -50,7 +50,7 @@ export default function CarList({history, match, authInfo}) {
                       if (authInfo.linkcode === 1){
                         // 정비사 ==> CheckList 등록으로 이동
                         history.push(`/checklist/${item.car_id}/post`)
-                      } else if (authInfo.linkcode ===0){
+                      } else if (authInfo.linkcode === 0){
                         // master ==> CarDetail (상세보기)로 이동.
                         history.push(`/car/${item.car_id}`)
                       }

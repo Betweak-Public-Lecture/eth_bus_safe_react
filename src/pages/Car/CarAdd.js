@@ -11,6 +11,7 @@ export default function CarAdd({history}) {
     car_day: '',
     car_result: ''
   })
+  
 
   const submitCarAddForm = React.useCallback(function(carForm){
     fetch('/api/car', {
@@ -32,6 +33,8 @@ export default function CarAdd({history}) {
       console.error(err)
     })
   }, [])
+
+
 
   return (
     <Container style={{paddingTop: 60}}>
@@ -127,9 +130,10 @@ export default function CarAdd({history}) {
               />
             </Form.Group>
 
-            <Button onClick={()=>{
-              submitCarAddForm(carForm)
-            }}>차량 추가</Button>
+            <Button onClick={
+              // submitCarAddForm() // 햠수 호출
+              ()=>{ submitCarAddForm(carForm) } // 함수 자체
+            }>차량 추가</Button>
           </Form>
         </Col>
       </Row>

@@ -28,6 +28,21 @@ export default function CarDetail({history, match}) {
       }
     })
   }, [])
+
+  const deleteCar = function(carId)  {
+    fetch(`/api/car/${carId}`, {
+      method: 'DELETE'
+    }).then(resp=>{
+      return resp.json();
+    }).then(data=>{
+      if(data.status === 'Success'){
+        history.push('/carlist');
+      } else{
+        alert("네트워크 오류")
+      }
+    })
+  }
+  
   
   return (
     <Container style={{paddingTop: 60}}>
@@ -67,8 +82,13 @@ export default function CarDetail({history, match}) {
           
           <div style={{textAlign:'center', marginTop:10}}>
             <ButtonGroup size="lg">
-              <Button variant={'info'} >수정</Button>
-              <Button variant={'danger'}>삭제</Button>
+              <Button variant={'info'} onClick={()=>{
+                history.push(`car/${carId}/edit`);
+              }}  >수정</Button>
+              <Button 
+                variant={'danger'} 
+                onClick={()=>{deleteCar(carId)}}
+              >삭제</Button>
             </ButtonGroup>
           </div>
         </Col>

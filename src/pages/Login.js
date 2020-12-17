@@ -1,7 +1,7 @@
 import React from 'react'
 import {Container, Row, Col, FormGroup, Form, Button} from 'react-bootstrap';
 
-export default function Login({history, setLogin}) {
+export default function Login({history, setAuthInfo}) {
   // login Fetch 구현!
   const [userForm, setUserForm] = React.useState({
     post_id: '',
@@ -24,8 +24,10 @@ export default function Login({history, setLogin}) {
     }).then(data=>{
       if (data.status === 'Success'){
         // localStorage: (브라우저의 저장공간(DB))
-        localStorage.setItem('post_id', userForm.post_id);
-        setLogin()
+        localStorage.setItem('authInfo', JSON.stringify(data.result)) // localStorage에 authInfo(post_id, linkcode, ... 저장)
+        // localStorage.setItem('post_id', userForm.post_id);
+        
+        setAuthInfo(data.result) // App.js의 State로 저장.
         history.push('/home');
       }
     })

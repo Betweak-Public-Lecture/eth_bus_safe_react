@@ -51,12 +51,18 @@ export default function CarDetail({history, match}) {
             <tbody>
               <tr>
                 {/* 실습: 자동차 상세보기 렌더링 */}
+                <td>{carInfo.car_id}</td>
+                <td>{carInfo.car_div}</td>
+                <td>{carInfo.car_type}</td>
+                <td>{carInfo.car_division}</td>
+                <td>{carInfo.car_day}</td>
               </tr>
             </tbody>
           </Table>
           <h5 >기타사항</h5>
           <div style={{border:"1px solid #e9e9e9", width: '100%', minHeight: 300, padding:10}}>
               {/* 실습: car_result 보여주기 */}
+              {carInfo.car_result}
           </div>
           
           <div style={{textAlign:'center', marginTop:10}}>

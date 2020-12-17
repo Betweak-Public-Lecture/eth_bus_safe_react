@@ -55,7 +55,7 @@ function App() {
         <Route path='/register' exact component={Register} />
 
         {/* Car Routes */}
-        <Route path='/carlist' exact component={CarList} />
+        <Route path='/carlist' exact component={(props)=><CarList {...props} authInfo={authInfo} />} />
         <Route path='/caradd' exact component={CarAdd} />
         <Route path='/car/:carId/edit' exact component={CarEdit} />
         <Route path='/car/:carId' exact component={CarDetail} />

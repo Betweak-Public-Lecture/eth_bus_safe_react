@@ -1,6 +1,8 @@
 import React from 'react'
 import {Container, Row, Col, Table, Form, Button} from 'react-bootstrap';
 
+import { Link } from 'react-router-dom';
+
 export default function CarList({history, match, authInfo}) {
   
   // 통신하기 실습
@@ -39,6 +41,7 @@ export default function CarList({history, match, authInfo}) {
                 <th>차량 종류</th>
                 <th>연식</th>
                 <th>최종 검사일</th>
+                <th>Actions</th>
               </tr>
             </thead>
             <tbody>
@@ -60,6 +63,9 @@ export default function CarList({history, match, authInfo}) {
                       <td>{item.car_type}</td>
                       <td>{item.car_birth}</td>
                       <td>{item.car_day}</td>
+                      <td>
+                        <Link component={Button} to={`/checklist/${item.car_id}`}>체크리스트 보기</Link>
+                      </td>
                     </tr>
                   )
                 })

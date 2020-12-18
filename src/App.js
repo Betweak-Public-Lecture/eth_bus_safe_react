@@ -64,8 +64,9 @@ function App() {
         <Route path='/car/:carId' exact component={CarDetail} />
 
         {/* CheckList Routes */}
-        <Route path='/checklist' exact component={CheckList} />
+        <Route path='/checklist/:carId' exact component={CheckList} />
         <Route path='/checklist/:carId/post' exact component={CheckListPost} />
+        
       </Switch>
 
     </Router>

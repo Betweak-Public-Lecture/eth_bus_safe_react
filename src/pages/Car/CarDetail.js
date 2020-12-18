@@ -28,6 +28,7 @@ export default function CarDetail({history, match}) {
       }
     })
   }, [])
+  
 
   const deleteCar = function(carId)  {
     fetch(`/api/car/${carId}`, {
@@ -83,7 +84,7 @@ export default function CarDetail({history, match}) {
           <div style={{textAlign:'center', marginTop:10}}>
             <ButtonGroup size="lg">
               <Button variant={'info'} onClick={()=>{
-                history.push(`car/${carId}/edit`);
+                history.push(`/car/${carId}/edit`);
               }}  >수정</Button>
               <Button 
                 variant={'danger'} 

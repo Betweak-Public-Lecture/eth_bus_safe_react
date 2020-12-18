@@ -11,7 +11,7 @@ import Register from './pages/Register';
 // Car CRUD Page
 import CarList from './pages/Car/CarList';
 import CarDetail from './pages/Car/CarDetail';
-import CarEdit from './pages/Car/CarDetail';
+import CarEdit from './pages/Car/CarEdit';
 import CarAdd from './pages/Car/CarAdd';
 
 // CheckList Pages
@@ -55,7 +55,10 @@ function App() {
         <Route path='/register' exact component={Register} />
 
         {/* Car Routes */}
-        <Route path='/carlist' exact component={(props)=><CarList {...props} authInfo={authInfo} />} />
+        <Route path='/carlist' exact component={
+          (props)=><CarList {...props} authInfo={authInfo} />
+        } />
+
         <Route path='/caradd' exact component={CarAdd} />
         <Route path='/car/:carId/edit' exact component={CarEdit} />
         <Route path='/car/:carId' exact component={CarDetail} />
